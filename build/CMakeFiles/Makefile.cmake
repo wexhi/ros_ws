@@ -15,6 +15,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "catkin_generated/order_packages.cmake"
   "show_RGB_camera/catkin_generated/ordered_paths.cmake"
   "show_RGB_camera/catkin_generated/package.cmake"
+  "show_depth_camera/catkin_generated/ordered_paths.cmake"
+  "show_depth_camera/catkin_generated/package.cmake"
   "show_imu/catkin_generated/ordered_paths.cmake"
   "show_imu/catkin_generated/package.cmake"
   "show_odom/catkin_generated/ordered_paths.cmake"
@@ -22,6 +24,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/wexhi/ros_ws/src/CMakeLists.txt"
   "/home/wexhi/ros_ws/src/show_RGB_camera/CMakeLists.txt"
   "/home/wexhi/ros_ws/src/show_RGB_camera/package.xml"
+  "/home/wexhi/ros_ws/src/show_depth_camera/CMakeLists.txt"
+  "/home/wexhi/ros_ws/src/show_depth_camera/package.xml"
   "/home/wexhi/ros_ws/src/show_imu/CMakeLists.txt"
   "/home/wexhi/ros_ws/src/show_imu/package.xml"
   "/home/wexhi/ros_ws/src/show_odom/CMakeLists.txt"
@@ -212,6 +216,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "show_imu/CMakeFiles/CMakeDirectoryInformation.cmake"
   "show_odom/CMakeFiles/CMakeDirectoryInformation.cmake"
   "show_RGB_camera/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "show_depth_camera/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -253,4 +258,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "show_RGB_camera/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "show_RGB_camera/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "show_RGB_camera/CMakeFiles/geometry_msgs_generate_messages_eus.dir/DependInfo.cmake"
+  "show_depth_camera/CMakeFiles/show_depth_camera.dir/DependInfo.cmake"
   )

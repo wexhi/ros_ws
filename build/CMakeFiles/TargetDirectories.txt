@@ -84,3 +84,11 @@
 /home/wexhi/ros_ws/build/show_RGB_camera/CMakeFiles/geometry_msgs_generate_messages_eus.dir
 /home/wexhi/ros_ws/build/show_RGB_camera/CMakeFiles/list_install_components.dir
 /home/wexhi/ros_ws/build/show_RGB_camera/CMakeFiles/install.dir
+/home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/install/strip.dir
+/home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/install/local.dir
+/home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/test.dir
+/home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/list_install_components.dir
+/home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/show_depth_camera.dir
+/home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/edit_cache.dir
+/home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/rebuild_cache.dir
+/home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/install.dir

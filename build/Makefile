@@ -648,6 +648,19 @@ geometry_msgs_generate_messages_eus/fast:
 	$(MAKE) -f show_RGB_camera/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make show_RGB_camera/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
+#=============================================================================
+# Target rules for targets named show_depth_camera
+
+# Build rule for target.
+show_depth_camera: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 show_depth_camera
+.PHONY : show_depth_camera
+
+# fast build rule for target.
+show_depth_camera/fast:
+	$(MAKE) -f show_depth_camera/CMakeFiles/show_depth_camera.dir/build.make show_depth_camera/CMakeFiles/show_depth_camera.dir/build
+.PHONY : show_depth_camera/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -698,6 +711,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... show_depth_camera"
 .PHONY : help
 
 
