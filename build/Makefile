@@ -661,6 +661,19 @@ show_depth_camera/fast:
 	$(MAKE) -f show_depth_camera/CMakeFiles/show_depth_camera.dir/build.make show_depth_camera/CMakeFiles/show_depth_camera.dir/build
 .PHONY : show_depth_camera/fast
 
+#=============================================================================
+# Target rules for targets named show_lidar_points
+
+# Build rule for target.
+show_lidar_points: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 show_lidar_points
+.PHONY : show_lidar_points
+
+# fast build rule for target.
+show_lidar_points/fast:
+	$(MAKE) -f show_lidar_points/CMakeFiles/show_lidar_points.dir/build.make show_lidar_points/CMakeFiles/show_lidar_points.dir/build
+.PHONY : show_lidar_points/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -712,6 +725,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... show_depth_camera"
+	@echo "... show_lidar_points"
 .PHONY : help
 
 

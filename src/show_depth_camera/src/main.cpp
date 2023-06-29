@@ -1,10 +1,10 @@
 #include <iostream>
 #include <cstring>
 #include <opencv2/opencv.hpp>
-#include "ros/ros.h"
-#include "sensor_msgs/Image.h"
-#include "cv_bridge/cv_bridge.h"
-#include "image_transport/image_transport.h"
+#include <ros/ros.h>
+#include <sensor_msgs/Image.h>
+#include <cv_bridge/cv_bridge.h>
+#include <image_transport/image_transport.h>
 
 void callback(const sensor_msgs::ImageConstPtr& ptr)
 {
@@ -13,11 +13,11 @@ void callback(const sensor_msgs::ImageConstPtr& ptr)
         cv_ptr = cv_bridge::toCvCopy(ptr, sensor_msgs::image_encodings::TYPE_16UC1);
     } catch (cv_bridge::Exception& e) {
         ROS_ERROR("cv_bridge exception: %s", e.what());
-        return ;
+        return;
     }
+
     cv::imshow("depth_camera", cv_ptr->image);
     cv::waitKey(1);
-    return ;
 }
 
 int main(int argc, char** argv)

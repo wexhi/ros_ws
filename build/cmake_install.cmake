@@ -135,6 +135,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/wexhi/ros_ws/build/show_odom/cmake_install.cmake")
   include("/home/wexhi/ros_ws/build/show_RGB_camera/cmake_install.cmake")
   include("/home/wexhi/ros_ws/build/show_depth_camera/cmake_install.cmake")
+  include("/home/wexhi/ros_ws/build/show_lidar_points/cmake_install.cmake")
 
 endif()
 

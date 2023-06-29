@@ -14,13 +14,13 @@ cstring
 opencv2/opencv.hpp
 -
 ros/ros.h
-/home/wexhi/ros_ws/src/show_depth_camera/src/ros/ros.h
+-
 sensor_msgs/Image.h
-/home/wexhi/ros_ws/src/show_depth_camera/src/sensor_msgs/Image.h
+-
 cv_bridge/cv_bridge.h
-/home/wexhi/ros_ws/src/show_depth_camera/src/cv_bridge/cv_bridge.h
+-
 image_transport/image_transport.h
-/home/wexhi/ros_ws/src/show_depth_camera/src/image_transport/image_transport.h
+-
 
 /opt/ros/melodic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

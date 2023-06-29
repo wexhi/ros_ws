@@ -13,8 +13,6 @@ iostream
 -
 sensor_msgs/Imu.h
 -
-cstring
--
 opencv2/opencv.hpp
 -
 sensor_msgs/Image.h

@@ -92,3 +92,11 @@
 /home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/edit_cache.dir
 /home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/rebuild_cache.dir
 /home/wexhi/ros_ws/build/show_depth_camera/CMakeFiles/install.dir
+/home/wexhi/ros_ws/build/show_lidar_points/CMakeFiles/install/strip.dir
+/home/wexhi/ros_ws/build/show_lidar_points/CMakeFiles/install/local.dir
+/home/wexhi/ros_ws/build/show_lidar_points/CMakeFiles/test.dir
+/home/wexhi/ros_ws/build/show_lidar_points/CMakeFiles/list_install_components.dir
+/home/wexhi/ros_ws/build/show_lidar_points/CMakeFiles/show_lidar_points.dir
+/home/wexhi/ros_ws/build/show_lidar_points/CMakeFiles/edit_cache.dir
+/home/wexhi/ros_ws/build/show_lidar_points/CMakeFiles/rebuild_cache.dir
+/home/wexhi/ros_ws/build/show_lidar_points/CMakeFiles/install.dir

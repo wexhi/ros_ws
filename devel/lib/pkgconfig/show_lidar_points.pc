@@ -1,0 +1,8 @@
+prefix=/home/wexhi/ros_ws/devel
+
+Name: show_lidar_points
+Description: Description of show_lidar_points
+Version: 0.0.0
+Cflags: -I/home/wexhi/ros_ws/src/show_lidar_points/include
+Libs: -L${prefix}/lib 
+Requires: roscpp sensor_msgs
