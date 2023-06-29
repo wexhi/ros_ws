@@ -15,9 +15,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "catkin_generated/order_packages.cmake"
   "show_imu/catkin_generated/ordered_paths.cmake"
   "show_imu/catkin_generated/package.cmake"
+  "show_odom/catkin_generated/ordered_paths.cmake"
+  "show_odom/catkin_generated/package.cmake"
   "/home/wexhi/ros_ws/src/CMakeLists.txt"
   "/home/wexhi/ros_ws/src/show_imu/CMakeLists.txt"
   "/home/wexhi/ros_ws/src/show_imu/package.xml"
+  "/home/wexhi/ros_ws/src/show_odom/CMakeLists.txt"
+  "/home/wexhi/ros_ws/src/show_odom/package.xml"
   "/opt/ros/melodic/share/catkin/cmake/../package.xml"
   "/opt/ros/melodic/share/catkin/cmake/all.cmake"
   "/opt/ros/melodic/share/catkin/cmake/assert.cmake"
@@ -175,6 +179,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/googlemock/gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "show_imu/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "show_odom/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -204,4 +209,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "show_imu/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "show_imu/CMakeFiles/roscpp_generate_messages_nodejs.dir/DependInfo.cmake"
   "show_imu/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "show_odom/CMakeFiles/show_odom.dir/DependInfo.cmake"
   )

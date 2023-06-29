@@ -372,6 +372,12 @@ show_imu_BINARY_DIR:STATIC=/home/wexhi/ros_ws/build/show_imu
 //Value Computed by CMake
 show_imu_SOURCE_DIR:STATIC=/home/wexhi/ros_ws/src/show_imu
 
+//Value Computed by CMake
+show_odom_BINARY_DIR:STATIC=/home/wexhi/ros_ws/build/show_odom
+
+//Value Computed by CMake
+show_odom_SOURCE_DIR:STATIC=/home/wexhi/ros_ws/src/show_odom
+
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
 
@@ -488,7 +494,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -58,3 +58,11 @@
 /home/wexhi/ros_ws/build/show_imu/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /home/wexhi/ros_ws/build/show_imu/CMakeFiles/roscpp_generate_messages_nodejs.dir
 /home/wexhi/ros_ws/build/show_imu/CMakeFiles/std_msgs_generate_messages_py.dir
+/home/wexhi/ros_ws/build/show_odom/CMakeFiles/install/strip.dir
+/home/wexhi/ros_ws/build/show_odom/CMakeFiles/install/local.dir
+/home/wexhi/ros_ws/build/show_odom/CMakeFiles/test.dir
+/home/wexhi/ros_ws/build/show_odom/CMakeFiles/list_install_components.dir
+/home/wexhi/ros_ws/build/show_odom/CMakeFiles/edit_cache.dir
+/home/wexhi/ros_ws/build/show_odom/CMakeFiles/show_odom.dir
+/home/wexhi/ros_ws/build/show_odom/CMakeFiles/rebuild_cache.dir
+/home/wexhi/ros_ws/build/show_odom/CMakeFiles/install.dir

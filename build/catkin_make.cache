@@ -1,2 +1,2 @@
-show_imu
+show_imu:show_odom
 -DCATKIN_DEVEL_PREFIX=/home/wexhi/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/wexhi/ros_ws/install -G Unix Makefiles

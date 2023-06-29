@@ -492,6 +492,19 @@ std_msgs_generate_messages_py/fast:
 	$(MAKE) -f show_imu/CMakeFiles/std_msgs_generate_messages_py.dir/build.make show_imu/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named show_odom
+
+# Build rule for target.
+show_odom: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 show_odom
+.PHONY : show_odom
+
+# fast build rule for target.
+show_odom/fast:
+	$(MAKE) -f show_odom/CMakeFiles/show_odom.dir/build.make show_odom/CMakeFiles/show_odom.dir/build
+.PHONY : show_odom/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -530,6 +543,7 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... show_odom"
 .PHONY : help
 
 
