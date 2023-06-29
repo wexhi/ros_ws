@@ -7,3 +7,4 @@
 subdirs("gtest")
 subdirs("show_imu")
 subdirs("show_odom")
+subdirs("show_RGB_camera")
