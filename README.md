@@ -213,6 +213,59 @@ int main(int argc, char** argv)
 >> rosmsg show sensor_msgs/CameraInfo
 >> ```
 >> ![QQ截图20230630195000](https://github.com/wexhi/RosDisplaySystem/assets/120765859/f1860022-5661-4477-b6ae-eed465a29f96)
+>>    * 编写回调函数
+```cpp
+void cameraCallback(const sensor_msgs::ImageConstPtr& ptr)
+{
+    cv_bridge::CvImagePtr cvPtr;
+    try {
+        cvPtr = cv_bridge::toCvCopy(ptr, sensor_msgs::image_encodings::BGR8);
+    } catch (cv_bridge::Exception& e) {
+        ROS_ERROR("cv_bridge exception: %s", e.what());
+        return;
+    }
+    cv::imshow("color_camera", cvPtr->image);
+    cv::waitKey(1);
+    return;
+}
+```
+>>    * 订阅话题内容
+```cpp
+int main(int argc, char** argv)
+{
+    ros::init(argc, argv, "show_color_camera");
+    ros::NodeHandle nodeHandle;
+    image_transport::ImageTransport imageTransport(nodeHandle);
+    image_transport::Subscriber subscriber = imageTransport.subscribe("/camera/color/image_raw", 1000, cameraCallback);
+    ros::spin();
+
+    return 0;
+}
+```
+>>    * 在工作空间中输入
+>> ```bash
+>>      rosrun show_RGB_camera show_RGB_camera
+>> ```  
+>>    * 运行show_RGB_camera  
+>>     ![QQ截图20230630195809](https://github.com/wexhi/RosDisplaySystem/assets/120765859/3c71aa89-87f3-4c61-9f0c-efca3736b99d)
+> 2. 显示深度相机的数据
+>> 修改代码
+```cpp
+ void callback(const sensor_msgs::ImageConstPtr& ptr)
+{
+    cv_bridge::CvImagePtr cv_ptr;
+    try {
+        cv_ptr = cv_bridge::toCvCopy(ptr, sensor_msgs::image_encodings::TYPE_16UC1);
+    } catch (cv_bridge::Exception& e) {
+        ROS_ERROR("cv_bridge exception: %s", e.what());
+        return;
+    }
+
+    cv::imshow("depth_camera", cv_ptr->image);
+    cv::waitKey(1);
+}
+```
+
 
 
 
