@@ -249,7 +249,7 @@ int main(int argc, char** argv)
 >>    * 运行show_RGB_camera  
 >>     ![QQ截图20230630195809](https://github.com/wexhi/RosDisplaySystem/assets/120765859/3c71aa89-87f3-4c61-9f0c-efca3736b99d)
 > 2. 显示深度相机的数据
->> 修改代码
+>> * 修改代码
 ```cpp
  void callback(const sensor_msgs::ImageConstPtr& ptr)
 {
@@ -265,6 +265,33 @@ int main(int argc, char** argv)
     cv::waitKey(1);
 }
 ```
+>> * 运行程序
+>> ```bash
+>>      rosrun show_depth_camera show_depth_camera
+>> ```
+>> ![QQ截图20230630200711](https://github.com/wexhi/RosDisplaySystem/assets/120765859/12ad0d3f-f425-4d1e-b239-ef7c76e12954)
+# 三、用图形界面显示激光雷达的点云数据（利用PCL库）
+> * 查看话题消息的类型
+> ```bash
+> rostopic info /rslidar_points
+> ```
+> * 编写回调函数
+```cpp
+void callback(const sensor_msgs::PointCloud2::ConstPtr& msg)
+{
+    pcl::PointCloud<pcl::PointXYZ> cloud;
+    pcl::PCLPointCloud2 pcl_pc;
+    pcl_conversions::toPCL(*msg, pcl_pc);
+    pcl::fromPCLPointCloud2(pcl_pc, cloud);
+    viewer.showCloud(cloud.makeShared());
+}
+```
+> * 运行程序显示点云图
+> ```bash
+> rosrun show_lidar_points show_lidar_points
+> ```
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/assets/120765859/9fb52d7a-4c16-4d5e-8b7b-56fbefd4fbfb)
+
 
 
 
