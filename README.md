@@ -30,3 +30,16 @@ git的使用占10分；
 报告和视频占20分；
 任务1-3占50分；
 任务4占10分。
+
+# ROS数据展示
+# 一、显示小车的IMU和里程计（odometry）数据
+> ## 1. 显示IMU数据
+>> * 打开终端，输入`roscore`打开ros系统
+![QQ截图20230630174009](https://github.com/wexhi/RosDisplaySystem/assets/120765859/6727d4a7-b2ce-4709-accb-125fa22c33b4)
+>> * 进入存放bag包的路径:  
+       ``` cd ~/xxx/ ```  
+     此处的```xxx```替换为存放all.bag包的文件夹  
+>>    ![QQ截图20230630175802](https://github.com/wexhi/RosDisplaySystem/assets/120765859/1f95cd6d-fb19-4b50-8d3b-6c1bbd40ffe0)
+>> * 播放all.bag包```rosbag play all.bag```
+>>    ![QQ截图20230630181048](https://github.com/wexhi/RosDisplaySystem/assets/120765859/65dc2b28-d6b6-4766-b2fb-f75e23e87a0e)
+
