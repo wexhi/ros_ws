@@ -36,10 +36,20 @@ git的使用占10分；
 > ## 1. 显示IMU数据
 >> * 打开终端，输入`roscore`打开ros系统
 ![QQ截图20230630174009](https://github.com/wexhi/RosDisplaySystem/assets/120765859/6727d4a7-b2ce-4709-accb-125fa22c33b4)
->> * 进入存放bag包的路径:  
+>> * 打开新的终端，进入存放bag包的路径:  
        ``` cd ~/xxx/ ```  
      此处的```xxx```替换为存放all.bag包的文件夹  
 >>    ![QQ截图20230630175802](https://github.com/wexhi/RosDisplaySystem/assets/120765859/1f95cd6d-fb19-4b50-8d3b-6c1bbd40ffe0)
 >> * 播放all.bag包```rosbag play all.bag```
 >>    ![QQ截图20230630181048](https://github.com/wexhi/RosDisplaySystem/assets/120765859/65dc2b28-d6b6-4766-b2fb-f75e23e87a0e)
+>> * 打开新的终端，显示当前可订阅的话题```rostopic list```
+>>   ![QQ截图20230630181456](https://github.com/wexhi/RosDisplaySystem/assets/120765859/8867de45-847a-460a-8bb2-e275e302d87e)  
+>>   找到需要订阅的IMU话题```/imu/data_raw```
+>> ### 1-1. 直接通过命令行订阅topic查看数据
+>>> * 输入命令```rostopic echo /imu/data_raw``` (需要确保all.bag包没有暂停或结束)
+>>>   ![QQ截图20230630182406](https://github.com/wexhi/RosDisplaySystem/assets/120765859/6afc7c2f-a2c0-4391-9967-492adcb08571)
+>> ### 1-2. 通过编写回调函数查看数据
+>>> * 
+
+
 
