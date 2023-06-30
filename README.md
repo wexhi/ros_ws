@@ -34,24 +34,40 @@ git的使用占10分；
 # ROS数据展示
 # 一、显示小车的IMU和里程计（odometry）数据
 > ## 1. 显示IMU数据
->> * 打开终端，输入```roscore```打开ros系统
+>> * 打开终端，输入
+>>   ```bash
+>>   roscore
+>>   ```
+>>   打开ros系统
 ![QQ截图20230630174009](https://github.com/wexhi/RosDisplaySystem/assets/120765859/6727d4a7-b2ce-4709-accb-125fa22c33b4)
 >> * 打开新的终端，进入存放bag包的路径:  
        ```cd ~/xxx/```  
      此处的```xxx```替换为存放all.bag包的文件夹  
 >>    ![QQ截图20230630175802](https://github.com/wexhi/RosDisplaySystem/assets/120765859/1f95cd6d-fb19-4b50-8d3b-6c1bbd40ffe0)
->> * 播放all.bag包```rosbag play all.bag```
+>> * 播放all.bag包
+>>  ```bash
+>>   rosbag play all.bag
+>>  ```
 >>    ![QQ截图20230630181048](https://github.com/wexhi/RosDisplaySystem/assets/120765859/65dc2b28-d6b6-4766-b2fb-f75e23e87a0e)
->> * 打开新的终端，显示当前可订阅的话题```rostopic list```
+>> * 打开新的终端，显示当前可订阅的话题
+>>   ```bash
+>>   rostopic list
+>>   ```
 >>   ![QQ截图20230630181456](https://github.com/wexhi/RosDisplaySystem/assets/120765859/8867de45-847a-460a-8bb2-e275e302d87e)  
 >>   找到需要订阅的IMU话题```/imu/data_raw```
 >> ### 1-1. 直接通过命令行订阅topic查看数据
->>> * 输入命令```rostopic echo /imu/data_raw``` (需要确保all.bag包没有暂停或结束)
+>>> * 输入命令
+>>>   ```bash
+>>>   rostopic echo /imu/data_raw
+>>>   ```
+>>>   (需要确保all.bag包没有暂停或结束)
 >>>   ![QQ截图20230630182406](https://github.com/wexhi/RosDisplaySystem/assets/120765859/6afc7c2f-a2c0-4391-9967-492adcb08571)
 >> ### 1-2. 通过编写回调函数查看数据
 >>> * 输入命令，查看话题消息的类型  
->>> ```rostopic info /imu/data_raw```        
->>> ```rosmsg show sensor_msgs/Imu```  
+>>> ```bash
+>>> rostopic info /imu/data_raw        
+>>> rosmsg show sensor_msgs/Imu
+>>> ```  
 >>>![QQ截图20230630183538](https://github.com/wexhi/RosDisplaySystem/assets/120765859/476e053b-0e97-48ee-8e77-6f94de5e216f)
 >>> * 根据话题内容编写回调函数  
 >>>  ```cpp
@@ -115,6 +131,91 @@ git的使用占10分；
 >>>   rosrun show_imu show_imu
 >>>   ```
 >>>   ![QQ截图20230630192059](https://github.com/wexhi/RosDisplaySystem/assets/120765859/ee83dd24-45ea-48d8-a4d6-b0588433da67)
+> ## 2. 显示里程计（odometry）数据
+>> ### 2-1. 通过命令行查看数据
+>>> * 直接在终端中输入
+>>>   ```bash
+>>>   rostopic echo /odom
+>>>   ```
+>>>   ![QQ截图20230630193155](https://github.com/wexhi/RosDisplaySystem/assets/120765859/e3c982b2-1e0a-43d9-bdef-afb4fe989575)
+>> ### 2-2. 通过回调函数查看数据
+>> 根据显示数据编写回调函数
+```cpp 
+ void callback(const nav_msgs::Odometry::ConstPtr& ptr)
+ {
+    std::cout << "Header header" << std::endl;
+    std::cout << "    seq: " << ptr->header.seq << std::endl;
+    std::cout << "    stamp: " << ptr->header.stamp << std::endl;
+    std::cout << "    frame_id: " << ptr->header.frame_id << std::endl;
+    std::cout << "child_frame_id: " << ptr->child_frame_id << std::endl;
+    std::cout << "PoseWithCovariance pose" << std::endl;
+    std::cout << "    Pose pose" << std::endl;
+    std::cout << "        Point position" << std::endl;
+    std::cout << "            x: " << ptr->pose.pose.position.x << std::endl;
+    std::cout << "            y: " << ptr->pose.pose.position.y << std::endl;
+    std::cout << "            z: " << ptr->pose.pose.position.z << std::endl;
+    std::cout << "        Quaternion orientation" << std::endl;
+    std::cout << "            x: " << ptr->pose.pose.orientation.x << std::endl;
+    std::cout << "            y: " << ptr->pose.pose.orientation.y << std::endl;
+    std::cout << "            z: " << ptr->pose.pose.orientation.z << std::endl;
+    std::cout << "            w: " << ptr->pose.pose.orientation.w << std::endl;
+    std::cout << "    covariance" << std::endl;
+    std::cout << "        ";
+    for (int i = 0; i < 36; i++) {
+        std::cout << ptr->pose.covariance[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "TwistWithCovariance twist" << std::endl;
+    std::cout << "    Twist twist" << std::endl;
+    std::cout << "        Vector3 linear" << std::endl;
+    std::cout << "            x: " << ptr->twist.twist.linear.x << std::endl;
+    std::cout << "            y: " << ptr->twist.twist.linear.y << std::endl;
+    std::cout << "            z: " << ptr->twist.twist.linear.z << std::endl;
+    std::cout << "        Vector3 angular" << std::endl;
+    std::cout << "            x: " << ptr->twist.twist.angular.x << std::endl;
+    std::cout << "            y: " << ptr->twist.twist.angular.y << std::endl;
+    std::cout << "            z: " << ptr->twist.twist.angular.z << std::endl;
+    std::cout << "    covariance" << std::endl;
+    std::cout << "        ";
+    std::cout << "[";
+    for (int i = 0; i < 36; i++) {
+        if (i < 35)
+            std::cout << ptr->twist.covariance[i] << ", ";
+        else
+            std::cout << ptr->twist.covariance[i];
+    }
+    std::cout << "]";
+    std::cout << std::endl;
+    std::cout << "*************************************************************" << std::endl;
+}
+```
+>>> * 订阅里程计话题
+```cpp
+int main(int argc, char** argv)
+{
+    ros::init(argc, argv, "show_odometry");
+    ros::NodeHandle nodeHandle;
+    ros::Subscriber subscriber = nodeHandle.subscribe("/odom", 1000, callback);
+    ros::spin();
+    return 0;
+}
+```
+>>> * 运行show_odom
+>>>   ```bash
+>>>   rosrun show_odom show_odom
+>>>   ```
+>>>   ![QQ截图20230630194325](https://github.com/wexhi/RosDisplaySystem/assets/120765859/ec674416-d1e1-455d-a342-e841e4a71f1c)
+# 二、用图形界面显示颜色相机和深度相机的数据（利用OpenCV库）
+> 1. 显示color相机的数据
+>>    * 查看话题和消息的具体内容
+>> ```bash
+>> rostopic info /camera/color/camera_info        
+>> rosmsg show sensor_msgs/CameraInfo
+>> ```
+>> ![QQ截图20230630195000](https://github.com/wexhi/RosDisplaySystem/assets/120765859/f1860022-5661-4477-b6ae-eed465a29f96)
+
+
+
 
 
    
