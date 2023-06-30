@@ -49,7 +49,10 @@ git的使用占10分；
 >>> * 输入命令```rostopic echo /imu/data_raw``` (需要确保all.bag包没有暂停或结束)
 >>>   ![QQ截图20230630182406](https://github.com/wexhi/RosDisplaySystem/assets/120765859/6afc7c2f-a2c0-4391-9967-492adcb08571)
 >> ### 1-2. 通过编写回调函数查看数据
->>> * 
+>>> * 输入命令，查看话题消息的类型  
+>>> `rostopic info /imu/data_raw        
+>>> rosmsg show sensor_msgs/Imu`
+ 
 
 
 
