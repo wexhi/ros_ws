@@ -34,10 +34,10 @@ git的使用占10分；
 # ROS数据展示
 # 一、显示小车的IMU和里程计（odometry）数据
 > ## 1. 显示IMU数据
->> * 打开终端，输入`roscore`打开ros系统
+>> * 打开终端，输入```roscore```打开ros系统
 ![QQ截图20230630174009](https://github.com/wexhi/RosDisplaySystem/assets/120765859/6727d4a7-b2ce-4709-accb-125fa22c33b4)
 >> * 打开新的终端，进入存放bag包的路径:  
-       ``` cd ~/xxx/ ```  
+       ```cd ~/xxx/```  
      此处的```xxx```替换为存放all.bag包的文件夹  
 >>    ![QQ截图20230630175802](https://github.com/wexhi/RosDisplaySystem/assets/120765859/1f95cd6d-fb19-4b50-8d3b-6c1bbd40ffe0)
 >> * 播放all.bag包```rosbag play all.bag```
@@ -50,8 +50,51 @@ git的使用占10分；
 >>>   ![QQ截图20230630182406](https://github.com/wexhi/RosDisplaySystem/assets/120765859/6afc7c2f-a2c0-4391-9967-492adcb08571)
 >> ### 1-2. 通过编写回调函数查看数据
 >>> * 输入命令，查看话题消息的类型  
->>> `rostopic info /imu/data_raw        
->>> rosmsg show sensor_msgs/Imu`
+>>> ```rostopic info /imu/data_raw```        
+>>> ```rosmsg show sensor_msgs/Imu```  
+>>>![QQ截图20230630183538](https://github.com/wexhi/RosDisplaySystem/assets/120765859/476e053b-0e97-48ee-8e77-6f94de5e216f)
+>>> * 根据话题内容编写回调函数  
+>>>   ```void imuCallback(const sensor_msgs::Imu::ConstPtr &msg)
+{
+    std::cout << "Header header" << std::endl;
+    std::cout << "  seq:  " << msg->header.seq << std::endl;
+    std::cout << "  time stamp:  " << msg->header.stamp << std::endl;
+    std::cout << "    frame_id:  " << msg->header.frame_id << std::endl;
+    std::cout << " orientation" << std::endl;
+    std::cout << "     x: " << msg->orientation.x << std::endl;
+    std::cout << "     y: " << msg->orientation.y << std::endl;
+    std::cout << "     z: " << msg->orientation.z << std::endl;
+    std::cout << "     w: " << msg->orientation.w << std::endl;
+    std::cout << "orientation_covariance" << std::endl;
+    std::cout << "    ";
+    for (int i = 0; i < 9; ++i) {
+        std::cout << msg->orientation_covariance[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << " angular_velocity" << std::endl;
+    std::cout << "     x: " << msg->angular_velocity.x << std::endl;
+    std::cout << "     y: " << msg->angular_velocity.y << std::endl;
+    std::cout << "     z: " << msg->angular_velocity.z << std::endl;
+    std::cout << " angular_velocity_covariance" << std::endl;
+    std::cout << "    ";
+    for (int i = 0; i < 9; ++i) {
+        std::cout << msg->angular_velocity_covariance[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << " linear_acceleration" << std::endl;
+    std::cout << "     x: " << msg->linear_acceleration.x << std::endl;
+    std::cout << "     y: " << msg->linear_acceleration.y << std::endl;
+    std::cout << "     z: " << msg->linear_acceleration.z << std::endl;
+    std::cout << " linear_acceleration_covariance" << std::endl;
+    std::cout << "    ";
+    for (int i = 0; i < 9; ++i) {
+        std::cout << msg->linear_acceleration_covariance[i] << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "************************************************************" << std::endl;
+    return ;
+}```
+
  
 
 
