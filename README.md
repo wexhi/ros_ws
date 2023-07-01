@@ -39,21 +39,21 @@ git的使用占10分；
 >>   roscore
 >>   ```
 >>   打开ros系统
-![QQ截图20230630174009](https://github.com/wexhi/RosDisplaySystem/assets/120765859/6727d4a7-b2ce-4709-accb-125fa22c33b4)
+![QQ截图20230630174009](https://github.com/wexhi/RosDisplaySystem/blob/master/image/1.png)
 >> * 打开新的终端，进入存放bag包的路径:  
        ```cd ~/xxx/```  
      此处的```xxx```替换为存放all.bag包的文件夹  
->>    ![QQ截图20230630175802](https://github.com/wexhi/RosDisplaySystem/assets/120765859/1f95cd6d-fb19-4b50-8d3b-6c1bbd40ffe0)
+>>    ![QQ截图20230630175802](https://github.com/wexhi/RosDisplaySystem/blob/master/image/2.png)
 >> * 播放all.bag包
 >>  ```bash
 >>   rosbag play all.bag
 >>  ```
->>    ![QQ截图20230630181048](https://github.com/wexhi/RosDisplaySystem/assets/120765859/65dc2b28-d6b6-4766-b2fb-f75e23e87a0e)
+>>    ![QQ截图20230630181048](https://github.com/wexhi/RosDisplaySystem/blob/master/image/3.png)
 >> * 打开新的终端，显示当前可订阅的话题
 >>   ```bash
 >>   rostopic list
 >>   ```
->>   ![QQ截图20230630181456](https://github.com/wexhi/RosDisplaySystem/assets/120765859/8867de45-847a-460a-8bb2-e275e302d87e)  
+>>   ![QQ截图20230630181456](https://github.com/wexhi/RosDisplaySystem/blob/master/image/4.png)  
 >>   找到需要订阅的IMU话题```/imu/data_raw```
 >> ### 1-1. 直接通过命令行订阅topic查看数据
 >>> * 输入命令
@@ -61,14 +61,14 @@ git的使用占10分；
 >>>   rostopic echo /imu/data_raw
 >>>   ```
 >>>   (需要确保all.bag包没有暂停或结束)
->>>   ![QQ截图20230630182406](https://github.com/wexhi/RosDisplaySystem/assets/120765859/6afc7c2f-a2c0-4391-9967-492adcb08571)
+>>>   ![QQ截图20230630182406](https://github.com/wexhi/RosDisplaySystem/blob/master/image/5.png)
 >> ### 1-2. 通过编写回调函数查看数据
 >>> * 输入命令，查看话题消息的类型  
 >>> ```bash
 >>> rostopic info /imu/data_raw        
 >>> rosmsg show sensor_msgs/Imu
 >>> ```  
->>>![QQ截图20230630183538](https://github.com/wexhi/RosDisplaySystem/assets/120765859/476e053b-0e97-48ee-8e77-6f94de5e216f)
+>>>![QQ截图20230630183538](https://github.com/wexhi/RosDisplaySystem/blob/master/image/6.png)
 >>> * 根据话题内容编写回调函数  
 >>>  ```cpp
 >>>   void imuCallback(const sensor_msgs::Imu::ConstPtr &msg)
@@ -130,14 +130,14 @@ git的使用占10分；
 >>>   source ./devel/setup.bash
 >>>   rosrun show_imu show_imu
 >>>   ```
->>>   ![QQ截图20230630192059](https://github.com/wexhi/RosDisplaySystem/assets/120765859/ee83dd24-45ea-48d8-a4d6-b0588433da67)
+>>>   ![QQ截图20230630192059](https://github.com/wexhi/RosDisplaySystem/blob/master/image/7.png)
 > ## 2. 显示里程计（odometry）数据
 >> ### 2-1. 通过命令行查看数据
 >>> * 直接在终端中输入
 >>>   ```bash
 >>>   rostopic echo /odom
 >>>   ```
->>>   ![QQ截图20230630193155](https://github.com/wexhi/RosDisplaySystem/assets/120765859/e3c982b2-1e0a-43d9-bdef-afb4fe989575)
+>>>   ![QQ截图20230630193155](https://github.com/wexhi/RosDisplaySystem/blob/master/image/8.png)
 >> ### 2-2. 通过回调函数查看数据
 >> 根据显示数据编写回调函数
 ```cpp 
@@ -204,7 +204,7 @@ int main(int argc, char** argv)
 >>>   ```bash
 >>>   rosrun show_odom show_odom
 >>>   ```
->>>   ![QQ截图20230630194325](https://github.com/wexhi/RosDisplaySystem/assets/120765859/ec674416-d1e1-455d-a342-e841e4a71f1c)
+>>>   ![QQ截图20230630194325](https://github.com/wexhi/RosDisplaySystem/blob/master/image/9.png)
 # 二、用图形界面显示颜色相机和深度相机的数据（利用OpenCV库）
 > 1. 显示color相机的数据
 >>    * 查看话题和消息的具体内容
@@ -212,7 +212,7 @@ int main(int argc, char** argv)
 >> rostopic info /camera/color/camera_info        
 >> rosmsg show sensor_msgs/CameraInfo
 >> ```
->> ![QQ截图20230630195000](https://github.com/wexhi/RosDisplaySystem/assets/120765859/f1860022-5661-4477-b6ae-eed465a29f96)
+>> ![QQ截图20230630195000](https://github.com/wexhi/RosDisplaySystem/blob/master/image/10.png)
 >>    * 编写回调函数
 ```cpp
 void cameraCallback(const sensor_msgs::ImageConstPtr& ptr)
@@ -247,7 +247,7 @@ int main(int argc, char** argv)
 >>      rosrun show_RGB_camera show_RGB_camera
 >> ```  
 >>    * 运行show_RGB_camera  
->>     ![QQ截图20230630195809](https://github.com/wexhi/RosDisplaySystem/assets/120765859/3c71aa89-87f3-4c61-9f0c-efca3736b99d)
+>>     ![QQ截图20230630195809](https://github.com/wexhi/RosDisplaySystem/blob/master/image/11.png)
 > 2. 显示深度相机的数据
 >> * 修改代码
 ```cpp
@@ -269,7 +269,7 @@ int main(int argc, char** argv)
 >> ```bash
 >>      rosrun show_depth_camera show_depth_camera
 >> ```
->> ![QQ截图20230630200711](https://github.com/wexhi/RosDisplaySystem/assets/120765859/12ad0d3f-f425-4d1e-b239-ef7c76e12954)
+>> ![QQ截图20230630200711](https://github.com/wexhi/RosDisplaySystem/blob/master/image/12.png)
 # 三、用图形界面显示激光雷达的点云数据（利用PCL库）
 > * 查看话题消息的类型
 > ```bash
@@ -290,7 +290,7 @@ void callback(const sensor_msgs::PointCloud2::ConstPtr& msg)
 > ```bash
 > rosrun show_lidar_points show_lidar_points
 > ```
-> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/assets/120765859/9fb52d7a-4c16-4d5e-8b7b-56fbefd4fbfb)
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/14.png)
 
 
 
