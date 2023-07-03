@@ -334,6 +334,7 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr& map_msg)
 ```
 > * 显示地图  
 > ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/19.png)
+## 2.利用rviz显示地图
 > * 重新播放all.bag
 >   ```bash
 >   rosbag play --pause all.bag
