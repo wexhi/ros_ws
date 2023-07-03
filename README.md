@@ -291,6 +291,12 @@ void callback(const sensor_msgs::PointCloud2::ConstPtr& msg)
 > rosrun show_lidar_points show_lidar_points
 > ```
 > ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/14.png)
+# 四、二维重建地图
+> * 打开rviz
+>   ```bash
+>   rviz
+>   ```
+>   
 
 
 
