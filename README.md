@@ -292,12 +292,25 @@ void callback(const sensor_msgs::PointCloud2::ConstPtr& msg)
 > ```
 > ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/14.png)
 # 四、二维重建地图
+> * 重新播放all.bag
+>   ```bash
+>   rosbag play --pause all.bag
+>   ```
+>   > * 开启新终端，输入
+>   ```bash
+>   rosrun gmapping slam_gmapping scan
+>   ```
 > * 打开rviz
 >   ```bash
 >   rviz
 >   ```
->   
-
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/15.png)
+> * 点击左下方Add选项  
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/16.png)
+> * 将Topic选择为/map  
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/17.png)
+>   此时可以看到重建后的二维地图
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/18.png)
 
 
 
