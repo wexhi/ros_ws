@@ -1,4 +1,5 @@
 # RosDisplaySystem
+# https://www.bilibili.com/video/BV11X4y1n7s6/
 # 任务内容
 1、利用松灵小车上录制的bag包数据（从QQ群下载），编写软件，展示ROS系统中的各类数据，具体包括：
 
@@ -291,7 +292,26 @@ void callback(const sensor_msgs::PointCloud2::ConstPtr& msg)
 > rosrun show_lidar_points show_lidar_points
 > ```
 > ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/14.png)
-
+# 四、二维重建地图
+> * 重新播放all.bag
+>   ```bash
+>   rosbag play --pause all.bag
+>   ```
+>   > * 开启新终端，输入
+>   ```bash
+>   rosrun gmapping slam_gmapping scan
+>   ```
+> * 打开rviz
+>   ```bash
+>   rviz
+>   ```
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/15.png)
+> * 点击左下方Add选项  
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/16.png)
+> * 将Topic选择为/map   
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/17.png)  
+>   此时可以看到重建后的二维地图  
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/18.png)
 
 
 
