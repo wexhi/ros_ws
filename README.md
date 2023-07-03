@@ -307,9 +307,9 @@ void callback(const sensor_msgs::PointCloud2::ConstPtr& msg)
 > ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/15.png)
 > * 点击左下方Add选项  
 > ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/16.png)
-> * 将Topic选择为/map  
-> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/17.png)
->   此时可以看到重建后的二维地图
+> * 将Topic选择为/map   
+> ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/17.png)  
+>   此时可以看到重建后的二维地图  
 > ![QQ截图20230630201539](https://github.com/wexhi/RosDisplaySystem/blob/master/image/18.png)
 
 
