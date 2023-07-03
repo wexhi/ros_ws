@@ -1,2 +1,2 @@
-show_RGB_camera:show_depth_camera:show_imu:show_lidar_points:show_odom
+map:show_RGB_camera:show_depth_camera:show_imu:show_lidar_points:show_odom
 -DCATKIN_DEVEL_PREFIX=/home/wexhi/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/wexhi/ros_ws/install -G Unix Makefiles

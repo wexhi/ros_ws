@@ -5,6 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("map")
 subdirs("show_imu")
 subdirs("show_odom")
 subdirs("show_RGB_camera")
